@@ -1,0 +1,50 @@
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+
+  --color-background: #fafaf8;
+  --color-primary: #172b4d;
+  --color-accent: #426b9a;
+  --color-text: #263238;
+  --color-text-secondary: #687581;
+  --color-border: #e5e8eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 8%;
+  flex: 1;
+}
+
+.page-placeholder {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.page-placeholder h1 {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+}
