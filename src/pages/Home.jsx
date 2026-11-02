@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
+import Skills from '../components/Skills';
 import './Home.css';
 
 function Home() {
   const profileImage = `${import.meta.env.BASE_URL}images/profile/rodo.jpg`;
 
   return (
+    <>
     <section className="hero">
 
       <div className="hero-content">
@@ -44,6 +46,8 @@ function Home() {
       </div>
 
     </section>
+    <Skills />
+    </>
   );
 }
 
