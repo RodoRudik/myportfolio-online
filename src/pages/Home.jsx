@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Skills from '../components/Skills';
+import FeaturedProject from '../components/FeaturedProject';
 import './Home.css';
 
 function Home() {
@@ -47,6 +48,7 @@ function Home() {
 
     </section>
     <Skills />
+    <FeaturedProject />
     </>
   );
 }

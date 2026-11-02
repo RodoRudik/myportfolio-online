@@ -1,0 +1,133 @@
+.featured-project {
+  padding: 100px 0;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 40px;
+}
+
+.section-eyebrow {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.section-heading > p:last-child {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-preview {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9edf2;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.project-information {
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-status {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.project-information h3 {
+  color: var(--color-primary);
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+}
+
+.project-description {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.project-technologies span {
+  padding: 7px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  color: var(--color-text);
+  font-size: 0.8rem;
+}
+
+.project-link {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.project-link:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .featured-project {
+    padding: 70px 0;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-preview {
+    min-height: 250px;
+  }
+
+  .project-information {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-information {
+    padding: 24px;
+  }
+
+  .project-information h3 {
+    font-size: 1.4rem;
+  }
+}
