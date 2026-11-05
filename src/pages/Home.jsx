@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Skills from '../components/Skills';
 import FeaturedProject from '../components/FeaturedProject';
 import About from '../components/About';
+import Contact from '../components/Contact';
 import './Home.css';
 
 function Home() {
@@ -51,6 +52,7 @@ function Home() {
     <Skills />
     <FeaturedProject />
     <About />
+    <Contact />
     </>
   );
 }
