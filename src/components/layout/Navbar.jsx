@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
+import LanguageSwitcher from '../../features/i18n/LanguageSwitcher';
+import { useLanguage } from '../../features/i18n/LanguageContext';
+
 import './Navbar.css';
 
 function Navbar() {
@@ -9,11 +12,13 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const { t } = useLanguage();
+
   const navigationItems = [
-    { label: 'Skills', id: 'skills' },
-    { label: 'Projects', id: 'projects' },
-    { label: 'About', id: 'about' },
-    { label: 'Contact', id: 'contact' },
+    { label: t('navigation.skills'), id: 'skills' },
+    { label: t('navigation.projects'), id: 'projects' },
+    { label: t('navigation.about'), id: 'about' },
+    { label: t('navigation.contact'), id: 'contact' },
   ];
 
   function handleSectionNavigation(sectionId) {
@@ -33,10 +38,6 @@ function Navbar() {
     });
   }
 
-  function handleLogoClick() {
-    setMenuOpen(false);
-  }
-
   return (
     <header className="navbar">
       <div className="navbar-container">
@@ -44,7 +45,7 @@ function Navbar() {
         <NavLink
           to="/"
           className="navbar-logo"
-          onClick={handleLogoClick}
+          onClick={() => setMenuOpen(false)}
         >
           RE<span>.</span>
         </NavLink>
@@ -71,7 +72,7 @@ function Navbar() {
             end
             onClick={() => setMenuOpen(false)}
           >
-            Home
+            {t('navigation.home')}
           </NavLink>
 
           {navigationItems.map((item) => (
@@ -88,8 +89,10 @@ function Navbar() {
             to="/case-study"
             onClick={() => setMenuOpen(false)}
           >
-            Case Study
+            {t('navigation.caseStudy')}
           </NavLink>
+
+          <LanguageSwitcher />
         </nav>
 
       </div>

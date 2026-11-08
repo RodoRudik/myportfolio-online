@@ -1,0 +1,28 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 5px;
+  font-size: 0.85rem;
+}
+
+.language-switcher button {
+  padding: 5px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.language-switcher button:hover,
+.language-switcher button.selected {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.language-switcher span {
+  color: var(--color-border);
+}
