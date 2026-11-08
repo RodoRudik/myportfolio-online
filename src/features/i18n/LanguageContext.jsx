@@ -1,8 +1,6 @@
-import { createContext, useContext, useState } from 'react';
-
+import { useState } from 'react';
 import { translations } from './translations';
-
-const LanguageContext = createContext(null);
+import { LanguageContext } from './language-context';
 
 function getInitialLanguage() {
   const savedLanguage = localStorage.getItem('portfolio-language');
@@ -10,13 +8,11 @@ function getInitialLanguage() {
   return savedLanguage === 'es' ? 'es' : 'en';
 }
 
-export function LanguageProvider({ children }) {
+function LanguageProvider({ children }) {
   const [language, setLanguage] = useState(getInitialLanguage);
 
   function changeLanguage(newLanguage) {
-    if (!translations[newLanguage]) {
-      return;
-    }
+    if (!translations[newLanguage]) return;
 
     setLanguage(newLanguage);
     localStorage.setItem('portfolio-language', newLanguage);
@@ -34,22 +30,10 @@ export function LanguageProvider({ children }) {
   }
 
   return (
-    <LanguageContext.Provider
-      value={{ language, changeLanguage, t }}
-    >
+    <LanguageContext.Provider value={{ language, changeLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
-export function useLanguage() {
-  const context = useContext(LanguageContext);
-
-  if (!context) {
-    throw new Error(
-      'useLanguage must be used inside LanguageProvider'
-    );
-  }
-
-  return context;
-}
+export { LanguageProvider };

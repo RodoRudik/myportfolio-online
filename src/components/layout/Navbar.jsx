@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import LanguageSwitcher from '../../features/i18n/LanguageSwitcher';
-import { useLanguage } from '../../features/i18n/LanguageContext';
-
+import { useLanguage } from '../../features/i18n/useLanguage';
 import './Navbar.css';
 
 function Navbar() {
